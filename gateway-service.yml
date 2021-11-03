@@ -22,7 +22,11 @@ spring:
         - id: servicio-customer
           uri: http://localhost:8790
           predicates:
-            - Path=/api/customer/** , Path=/api/customerbusiness/**
+            - Path=/api/customer/**
+        - id: servicio-customer
+          uri: http://localhost:8790
+          predicates:
+            - Path=/api/customerbusiness/**
         - id: servicio-account
           uri: http://localhost:8791
           predicates:
