@@ -1,0 +1,22 @@
+server:
+  port: 8094
+spring:
+  application:
+    name: servicio-Credit-Movements
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/dbmovementscredits
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka
