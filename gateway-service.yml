@@ -20,14 +20,14 @@ spring:
     gateway:
       routes:
         - id: servicio-customer
-          uri: http://localhost:8790
+          uri: http://localhost:8090
           predicates:
             - Path=/api/customer/**
         - id: servicio-customer
-          uri: http://localhost:8790
+          uri: http://localhost:8090
           predicates:
             - Path=/api/customerbusiness/**
         - id: servicio-account
-          uri: http://localhost:8791
+          uri: http://localhost:8091
           predicates:
             - Path=/api/savings/**
