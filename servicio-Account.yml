@@ -1,0 +1,22 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: servicio-Account
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/dbaccount
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka
