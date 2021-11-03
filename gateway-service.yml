@@ -1,6 +1,6 @@
 server:
   port: 8097
-
+  
 management:
   endpoints:
     web:
@@ -19,11 +19,11 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: SERVICIO-CUSTOMER
-          uri: http://localhost:8090
+        - id: servicio-customer
+          uri: lb://servicio-customer
           predicates:
             - Path=/api/customer/**
-        - id: SERVICIO-ACCOUNT
+        - id: servicio-account
           uri: lb://servicio-account
           predicates:
             - Path=/api/savings/**
