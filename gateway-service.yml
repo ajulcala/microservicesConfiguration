@@ -27,7 +27,7 @@ spring:
           uri: http://localhost:8090
           predicates:
             - Path=/api/customerbusiness/**
-        - id: servicio-account
-          uri: http://localhost:8091
+        - id: servicio-Account
+          uri: lb://servicio-Account
           predicates:
             - Path=/api/savings/**
