@@ -6,21 +6,21 @@ spring:
         - id: servicio-customer
           uri: lb://servicio-Account
           predicates:
-            - Path=/api/customer/**
+          - Path=/api/customer/**
           filters: StripPrefix=2
 
 
         - id: servicio-customer
           uri: lb://servicio-Account
           predicates:
-            - Path=/api/customerbusiness/**
+          - Path=/api/customerbusiness/**
           filters: StripPrefix=2
 
 
         - id: servicio-Account
           uri: lb://servicio-Account
           predicates:
-            - Path=/api/savings/**
+          - Path=/api/savings/**
           filters: StripPrefix=2
 server:
   port: 8097
