@@ -19,15 +19,23 @@ spring:
   cloud:
     gateway:
       routes:
+      
         - id: servicio-customer
-          uri: http://localhost:8090
+          uri: lb://servicio-Account
           predicates:
             - Path=/api/customer/**
+          filters: StripPrefix=2
+
+
         - id: servicio-customer
-          uri: http://localhost:8090
+          uri: lb://servicio-Account
           predicates:
             - Path=/api/customerbusiness/**
+          filters: StripPrefix=2
+
+
         - id: servicio-Account
           uri: lb://servicio-Account
           predicates:
             - Path=/api/savings/**
+          filters: StripPrefix=2
