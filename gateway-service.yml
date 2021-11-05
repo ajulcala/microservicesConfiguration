@@ -4,21 +4,21 @@ spring:
       routes:
       
         - id: servicio-customer
-          uri: lb://servicio-Account
+          uri: http://localhost:8090/api/customer
           predicates:
           - Path=/api/customer/**
           filters: StripPrefix=2
 
 
         - id: servicio-customer
-          uri: lb://servicio-Account
+          uri: http://localhost:8090/api/customerbusiness
           predicates:
           - Path=/api/customerbusiness/**
           filters: StripPrefix=2
 
 
         - id: servicio-Account
-          uri: lb://servicio-Account
+          uri: http://localhost:8091/api/savings
           predicates:
           - Path=/api/savings/**
           filters: StripPrefix=2
